@@ -1,0 +1,26 @@
+﻿@model List<ENT.clsPersona>
+
+<h1>LISTADO DE PERSONAS</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+        </tr>
+        
+    </thead>
+
+    <tbody>
+        @foreach(var persona in Model){
+            <tr>
+                <td>@persona.Id</td>
+                <td>@persona.Nombre</td>
+                <td>@persona.Apellido</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+

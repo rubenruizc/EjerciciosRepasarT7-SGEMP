@@ -1,0 +1,24 @@
+﻿@using Ejercicio04.Models.VM
+@model clsEditarPersonaVM
+
+
+
+<h2>Editar Persona</h2>
+
+<form method="post" action="@Url.Action("Index", "Home")">
+    <div>
+        <label>Nombre:</label>
+        @Html.TextBoxFor(m => m.Nombre, new { @class = "form-control" })
+    </div>
+    <div>
+        <label>Apellidos:</label>
+        @Html.TextBoxFor(m => m.Apellido, new { @class = "form-control" })
+    </div>
+    <div>
+        <label>Departamento:</label>
+        @Html.DropDownListFor(m => m.IdDepartamento, new SelectList(Model.Departamentos, "IdDepartamento", "NombreDepartamento", Model.IdDepartamento), new { @class = "form-control" })
+    </div>
+    <div>
+        <button type="submit" class="btn btn-primary">Guardar</button>
+    </div>
+</form>

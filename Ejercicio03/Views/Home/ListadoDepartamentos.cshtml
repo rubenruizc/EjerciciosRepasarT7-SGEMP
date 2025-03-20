@@ -1,0 +1,24 @@
+﻿@model List<ENT.clsDepartamento>
+
+<h1>LISTADO DE DEPARTAMENTOS</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>NOMBRE</th>
+        </tr>
+    </thead>
+    <tbody>
+       
+            @foreach(var departamento in Model){
+            <tr>
+                <td>@departamento.IdDepartamento</td>
+                <td>@departamento.NombreDepartamento</td>
+            </tr>
+            }
+        
+    </tbody>
+</table>
+
+<p><a href="@Url.Action("Index","Home")">Volver al Index</a></p>
