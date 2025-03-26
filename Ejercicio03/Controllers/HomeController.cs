@@ -37,14 +37,9 @@ namespace Ejercicio03.Controllers
         {
             clsPersona persona = clsListadoPersonasDAL.obtenerPersonaRandom(); // Llamada al método estático
 
-            var viewModel = new clsEditarPersonaVM
-            {
-                Nombre = persona.Nombre,
-                Apellido = persona.Apellido,
-                IdDepartamento = persona.IdDepartamento
-            };
+            clsEditarPersonaVM vm = new clsEditarPersonaVM(persona);
 
-            return View(viewModel);
+            return View(vm);
         }
 
         public IActionResult Privacy()

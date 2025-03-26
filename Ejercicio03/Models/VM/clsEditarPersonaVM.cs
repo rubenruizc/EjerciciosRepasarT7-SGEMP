@@ -1,18 +1,18 @@
 ﻿using DAL;
 using ENT;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Ejercicio04.Models.VM
 {
     public class clsEditarPersonaVM : clsPersona
     {
-        private List<clsDepartamento> departamentos;
-
-        public List<clsDepartamento> Departamentos { get; set; }
+        public List<clsDepartamento> Departamentos { get; }
 
         // Llenar el listado de departamentos al iniciar el ViewModel
-        public clsEditarPersonaVM() {
+        public clsEditarPersonaVM(clsPersona persona) : base(persona.Nombre,persona.Apellido,persona.IdDepartamento) {
 
             Departamentos = clsListadoDepartamentosDAL.obtenerDepartamentos();
+
         }
 
 
