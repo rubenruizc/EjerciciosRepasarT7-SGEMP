@@ -1,4 +1,4 @@
-﻿using DAL;
+﻿using BL;
 using ENT;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
@@ -11,7 +11,7 @@ namespace Ejercicio04.Models.VM
         // Llenar el listado de departamentos al iniciar el ViewModel
         public clsEditarPersonaVM(clsPersona persona) : base(persona.Nombre,persona.Apellido,persona.IdDepartamento) {
 
-            Departamentos = clsListadoDepartamentosDAL.obtenerDepartamentos();
+            Departamentos = clsListadoDepartamentoBL.obtenerDepartamentosBL();
 
         }
 

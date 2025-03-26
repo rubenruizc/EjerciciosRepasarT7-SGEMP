@@ -1,3 +1,4 @@
+using BL;
 using DAL;
 using Ejercicio03.Models;
 using Ejercicio04.Models.VM;
@@ -23,19 +24,19 @@ namespace Ejercicio03.Controllers
 
         public IActionResult ListadoPersonas()
         {
-            List<clsPersona> personas = DAL.clsListadoPersonasDAL.obtenerPersonas();
+            List<clsPersona> personas = clsListadoPersonasBL.obtenerPersonasBL();
             return View(personas);
         }
 
         public IActionResult ListadoDepartamentos()
         {
-            List<clsDepartamento> departamentos = DAL.clsListadoDepartamentosDAL.obtenerDepartamentos();
+            List<clsDepartamento> departamentos = clsListadoDepartamentoBL.obtenerDepartamentosBL();
             return View(departamentos);
         }
 
         public IActionResult EditarPersonas()
         {
-            clsPersona persona = clsListadoPersonasDAL.obtenerPersonaRandom(); // Llamada al método estático
+            clsPersona persona = clsListadoPersonasBL.obtenerPersonaRandomBL(); // Llamada al método estático
 
             clsEditarPersonaVM vm = new clsEditarPersonaVM(persona);
 
